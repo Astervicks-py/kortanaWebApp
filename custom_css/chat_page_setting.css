@@ -1,0 +1,257 @@
+nav
+{
+    max-width:100vw;
+    overflow:hidden;
+    box-shadow:0px 0px 10px var(--color-border);
+}
+
+nav .back
+{
+    display:grid;
+    grid-template-columns: 1fr 3fr;
+    justify-content:center;
+    align-items: center;
+    padding: 5px 20px; 
+}
+nav .back h2{font-size:1.6rem;text-align:right}
+nav .back button{text-align:center}
+
+.incoming{
+    /* width:max-content; */
+    max-width:300px;
+    min-width:150px;
+    display:flex;
+    flex-direction:row;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:4px;
+    margin-bottom:1rem;
+    
+    
+}
+.incoming .profile-pic{
+    width:30px;
+    height:30px;
+}
+
+.incoming p{
+    color:#fff;
+    padding-bottom:0rem;
+    padding-top:0rem;
+    margin-right:auto;
+    text-align:left;
+}
+
+.incoming p:last-child
+{
+    padding-bottom:0;
+}
+
+.incoming .message
+{
+    
+    width:100%;
+    max-width:300px;
+    padding:0.5rem;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    justify-content:flex-start;
+    gap:0;
+    background:#000;
+    border-radius:0 20px 20px 20px;
+}
+
+.main-part
+{
+    margin-top:90px;
+}
+
+.outgoing{
+    /* width:max-content; */
+    max-width:300px;
+    min-width:150px;
+    background:var(--color-dark);
+    color:#fff;
+    padding:0.5rem;
+    border-radius:20px 0 20px 20px;
+    margin-left:auto;
+    margin-bottom:1rem;
+    text-align:right;
+}
+
+section:last-child
+{
+    /* background:red; */
+    max-height:90vh;
+    overflow-y:scroll;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    padding-top:20px;
+    align-items: center;
+}
+
+.preview_settings-container
+{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
+    height:80vh;
+    max-height:80vh;
+    overflow-y: hidden;
+}
+
+.background img
+{
+    width:70px;
+    height:70px;
+    object-fit: cover;
+    cursor:pointer;
+    object-position:center;
+}
+
+.preview_screen
+{
+    background-image: url(../logo.jpg);
+    background-size:cover;
+    background-position:center;
+    max-height:80vh;
+    border-radius:10px;
+    position:relative;
+    border:solid 2px var(--color-border);
+    padding-top:10px;
+    padding-bottom:0px;
+}
+
+.typing-area
+{
+    width:100%;
+    display:flex;
+    position:absolute;
+    bottom:0;
+
+}
+
+.color
+{
+    width:30px;
+    height:30px;
+    cursor:pointer;
+}
+
+.background
+{
+    max-width:100%;
+    min-width:100%;
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+.custom-background
+{
+    width:70px;
+    height:70px;
+    background:red;
+    overflow:hidden;
+}
+
+.font{
+    cursor: pointer;
+    width:70px;
+    height:70px;
+    border:solid 2px #fff ;
+    color:#fff;
+    display:flex;
+    text-align:center;
+    font-size:2rem;
+    align-items:center;
+    justify-content: center;
+}
+
+.selected
+{
+    width:50px !important;
+    height:50px !important;
+    /* box-shadow:0px 0px 10px 5px #f00; */
+    border:double 6px #0f0;
+    margin:5px;
+}
+#container-form 
+{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+#container-form button{
+    width:60%;
+    padding:10px;
+    border-radius:10px;
+    background:var(--color-dark);
+    border:solid 2px var(--color-border);
+    cursor:pointer;
+    max-width:500px;
+    margin:auto;
+    color:var(--color-text);
+    font-size:1.2rem;
+}
+
+/* .custom::-webkit-file-upload-button{
+    background:red;
+    transform:scale(5);
+    opacity: 0;
+
+} */
+
+.typing-btn
+{
+    font-size:1.4rem !important;
+    height:40px !important;
+    width:10% !important;
+    border-radius:10px 0 0 10px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-btn:last-child
+{
+    border-radius:0px 10px 10px 0px !important;
+}
+
+@media screen and (max-width: 920px){
+    .container {
+        width: 100%;
+        max-width:100%;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .preview_settings-container
+    {
+        display:grid;
+        grid-template-columns: 1fr;
+        gap:10px;
+        height:100%;
+        max-height:100%;
+        /* overflow-y: hidden; */
+    }
+
+    .preview_screen
+    {
+        height:50vh;
+    }
+
+    section:last-child{
+        height:40vh;
+        overflow-y:scroll;
+
+    }
+
+    #container-form button
+    {
+        width:90%;
+    }
+}

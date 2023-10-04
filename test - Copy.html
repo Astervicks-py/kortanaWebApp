@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.3.js"></script>
+</head>
+<style>
+   body{
+    margin:0;
+    padding:0;
+    font-family: 'Courier New', Courier, monospace;
+   }
+
+   #header
+   {
+    text-align:center;
+    color:#000;
+    padding:30px 10px;
+    background-color:#f5f5f5;
+    font-size:50px;
+    font-weight:bold;
+    position: fixed;
+    top:0;
+    width:100%;
+    text-transform:uppercase;
+    transition:0.5s;
+   }
+
+   #header a
+   {
+    text-decoration: none;
+    font-size: 15px;
+    color:#333;
+   }
+
+    section{
+        width:80%;
+        padding:30px 10px;
+        border:solid 2px #111;
+        margin:auto;
+    }
+
+    section:first-of-type
+    {
+        margin-top:180px;
+    }
+</style>
+
+<body>
+    <div id="header">
+        <b>Company Logo</b> <br>
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Portfolio</a>
+        <a href="">Service</a>
+        <a href="">Contact</a>
+    </div>
+/
+    
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, similique consequatur non porro omnis aliquid ratione illum mollitia blanditiis tempore. Sapiente reprehenderit quia consequuntur doloremque amet quo neque sint accusamus!
+        Harum impedit numquam aliquam dolorum exercitationem autem, facere blanditiis voluptates, debitis excepturi similique sapiente? Minus magnam iste neque saepe amet, magni voluptates harum ex doloribus qui perferendis praesentium maxime dolores!
+        Amet ipsam, iure earum fugit laborum reiciendis nulla explicabo autem vel at. Quidem vel nemo, omnis odio illum corporis exercitationem eligendi saepe ad, at sit esse rem modi excepturi illo!
+        Nesciunt, quasi. Officia ducimus quasi culpa minima nostrum. Aperiam, repellat tempore. Autem et saepe harum! Qui, fuga excepturi ipsa harum facere esse illo cupiditate nam assumenda temporibus maxime, quas libero!
+        Quasi exercitationem ab neque possimus quos nisi porro eos similique, fuga officia sunt blanditiis cupiditate tempore enim distinctio commodi eius cumque quaerat aut provident sequi non! Iusto minus rerum mollitia?
+    </section>
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, similique consequatur non porro omnis aliquid ratione illum mollitia blanditiis tempore. Sapiente reprehenderit quia consequuntur doloremque amet quo neque sint accusamus!
+        Harum impedit numquam aliquam dolorum exercitationem autem, facere blanditiis voluptates, debitis excepturi similique sapiente? Minus magnam iste neque saepe amet, magni voluptates harum ex doloribus qui perferendis praesentium maxime dolores!
+        Amet ipsam, iure earum fugit laborum reiciendis nulla explicabo autem vel at. Quidem vel nemo, omnis odio illum corporis exercitationem eligendi saepe ad, at sit esse rem modi excepturi illo!
+        Nesciunt, quasi. Officia ducimus quasi culpa minima nostrum. Aperiam, repellat tempore. Autem et saepe harum! Qui, fuga excepturi ipsa harum facere esse illo cupiditate nam assumenda temporibus maxime, quas libero!
+        Quasi exercitationem ab neque possimus quos nisi porro eos similique, fuga officia sunt blanditiis cupiditate tempore enim distinctio commodi eius cumque quaerat aut provident sequi non! Iusto minus rerum mollitia?
+    </section>
+    <section>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, similique consequatur non porro omnis aliquid ratione illum mollitia blanditiis tempore. Sapiente reprehenderit quia consequuntur doloremque amet quo neque sint accusamus!
+        Harum impedit numquam aliquam dolorum exercitationem autem, facere blanditiis voluptates, debitis excepturi similique sapiente? Minus magnam iste neque saepe amet, magni voluptates harum ex doloribus qui perferendis praesentium maxime dolores!
+        Amet ipsam, iure earum fugit laborum reiciendis nulla explicabo autem vel at. Quidem vel nemo, omnis odio illum corporis exercitationem eligendi saepe ad, at sit esse rem modi excepturi illo!
+        Nesciunt, quasi. Officia ducimus quasi culpa minima nostrum. Aperiam, repellat tempore. Autem et saepe harum! Qui, fuga excepturi ipsa harum facere esse illo cupiditate nam assumenda temporibus maxime, quas libero!
+        Quasi exercitationem ab neque possimus quos nisi porro eos similique, fuga officia sunt blanditiis cupiditate tempore enim distinctio commodi eius cumque quaerat aut provident sequi non! Iusto minus rerum mollitia?
+    </section>
+  
+</body>
+
+<script src="./javascript/long-press.js"></script>
+<script>
+    window.onscroll = function() {
+        scrollFunction();
+    }
+
+    function scrollFunction() {
+        if(document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)
+        {
+            document.getElementById("header").style.fontSize = "30px";
+        }else{
+            document.getElementById("header").style.fontSize = "50px";
+        }
+    }
+</script>
+</html>

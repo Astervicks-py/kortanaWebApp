@@ -1,0 +1,632 @@
+:root {
+  --color-dark:rgb(4,9,30);
+  --color-black:#000;
+  --color-primary:hsl(252,75%,64%);
+  --color-white:#fff;
+  --card-padding:1rem;
+  --card-border-radius:1rem;
+  --color-danger:hsl(0,95%,65%);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+  background: var(--color-dark);
+}
+
+.container {
+  width: 100vw;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0px 0px 5px 3px rgba(255,255,255,0.3);
+  color: #fff !important;
+}
+.container header {
+  font-family: arial;
+  padding: var(--card-padding);
+  width: 100%;
+  position: relative;
+  color: var(--color-text);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  gap: 2vw;
+  border-bottom: solid 1px #ccc;
+}
+.container header .header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.container header .name {
+  font-size: 100%;
+}
+.container header .profile {
+  width: 18vw;
+  height: 18vw;
+  min-width: 80px;
+  min-height: 80px;
+  max-width: 150px;
+  max-height: 150px;
+  background: red;
+  border-radius: 50%;
+}
+.container header .profile img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+.container header .profile .file {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  max-width: 70px;
+  max-height: 70px;
+  height: 40%;
+  overflow: hidden;
+  border-radius: 50%;
+  text-align: center;
+}
+.container header .profile .file input {
+  cursor: pointer;
+  transform: scale(2) translateX(20%);
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+.container header .profile .file input::-webkit-file-upload-button {
+  cursor: pointer;
+}
+.container header .profile .file .icons {
+  font-size: 3vw;
+  color: var(--color-text);
+  padding: 1.4vh;
+  background-color: #000;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+main {
+  width: 100vw;
+  max-width: 800px;
+  border-radius: var(--card-border-radius);
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+  padding-top: 1rem;
+}
+main .left {
+  height: -moz-max-content;
+  height: max-content;
+  position: sticky;
+  top: 6.5rem;
+  width: 100%;
+}
+main .left .side-bar {
+  background: var(--color-black);
+  border-radius: var(--card-border-radius);
+  margin-top: 1rem;
+  transition: 1s;
+}
+main .left .side-bar .item {
+  color: var(--color-text);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 3rem;
+  font-size: 1.2rem;
+  cursor: crosshair;
+}
+main .left .side-bar .item span {
+  position: relative;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  margin-left: 1rem;
+}
+main .left .side-bar .item span small {
+  background: var(--color-danger);
+  color: #fff;
+  font-size: 0.7rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 0.8rem;
+  padding: 0.1rem 0.4rem;
+  position: absolute;
+  top: -0.2rem;
+  right: -1rem;
+}
+main .left .side-bar .item h3 {
+  margin-left: 1.5rem;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+main .left .side-bar .notification-popup {
+  background: var(--color-black);
+  border: solid 2px var(--color-border);
+  position: absolute;
+  top: 0;
+  transform: translateY(-50%);
+  left: 110%;
+  width: 30rem;
+  border-radius: var(--card-border-radius);
+  padding: var(--card-padding);
+  box-shadow: 10px 10px 10px black;
+  z-index: 8;
+  border: solid 4px var(--color-dark);
+}
+main .left .side-bar .notification-popup .notification-box {
+  background: var(--color-white);
+  border: solid 2px var(--color-border);
+  border-radius: var(--card-border-radius);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 250px;
+  overflow-y: scroll;
+}
+main .left .side-bar .notification-popup .notification-box::-webkit-scrollbar {
+  width: 0px;
+}
+main .left .side-bar .notification-popup .notification-box .notific {
+  display: flex;
+  gap: 10px;
+  background: var(--color-black);
+}
+main .left .side-bar .notification-popup .notification-box .notific small {
+  display: block;
+}
+main .left .side-bar .notification-popup .notification-box .notification-body {
+  background: var(--color-black);
+  font-size: 0.9rem;
+}
+main .left .side-bar .active {
+  background: var(--color-text);
+}
+main .left .side-bar .active span {
+  color: var(--color-dark);
+}
+main .left .side-bar .active h3 {
+  color: var(--color-dark);
+}
+main .main-content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: var(--card-padding);
+}
+main .main-content .post {
+  width: 100%;
+  padding: var(--card-padding);
+  background: var(--color-black);
+  border-radius: var(--card-border-radius);
+}
+main .main-content .post img {
+  width: 100%;
+}
+
+.feed {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: var(--card-padding) 0px;
+  background: var(--color-black);
+  border-radius: var(--card-border-radius);
+  color: var(--color-text);
+  border: solid 2px var(--color-border);
+}
+.feed .user {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 40px 1fr 20px;
+}
+.feed .user .ingo {
+  justify-self: start;
+  margin-left: 20px;
+}
+.feed .photo {
+  width: 100%;
+}
+.feed .photo img {
+  -o-object-fit: contain;
+     object-fit: contain;
+  width: 100%;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.feed .photo img:hover {
+  opacity: 0.8;
+}
+.feed .action-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.feed .action-btns span {
+  margin-left: 10px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+.feed .action-btns span button {
+  background: transparent;
+  font-size: 2rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+.feed .liked-by {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.feed .liked-by .likers {
+  width: 30px;
+  height: 30px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border: solid 3px var(--color-dark);
+  overflow: hidden;
+}
+.feed .liked-by .likers img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.feed .liked-by .likers:first-child {
+  margin-left: 0;
+}
+.feed .liked-by p {
+  font-size: 0.9rem;
+}
+.feed .caption {
+  width: 100%;
+  padding: 10px;
+  border: solid 2px var(--color-border);
+}
+.feed .caption .hash-tag {
+  color: blue;
+}
+.feed .comments {
+  padding: 10px;
+}
+
+.profile-pic {
+  max-width: 2.7rem;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.profile-pic img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top left;
+     object-position: top left;
+  width: 100%;
+}
+
+.profile {
+  width: 25vw;
+  height: 25vw;
+  min-width: 70px;
+  min-height: 70px;
+  max-width: 200px;
+  max-height: 200px;
+  background: red;
+  border-radius: 50%;
+  position: relative;
+  top: 0;
+}
+.profile img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 50%;
+}
+.profile .file {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40%;
+  max-width: 70px;
+  max-height: 70px;
+  height: 40%;
+  overflow: hidden;
+  border-radius: 50%;
+  text-align: center;
+}
+.profile .file input {
+  cursor: pointer;
+  transform: scale(2) translateX(20%);
+  position: absolute;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  opacity: 0;
+}
+.profile .file input::-webkit-file-upload-button {
+  cursor: pointer;
+}
+.profile .file .icons {
+  font-size: 4vw;
+  color: var(--color-white);
+  padding: 1.4vh;
+  background-color: #000;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-primary);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  width: 10px;
+  background: var(--color-dark);
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  border-radius: 10px;
+}
+
+/********* small Tablets and mobile ******/
+@media screen and (max-width: 600px) {
+  .notification-popup {
+    left: -76vw !important;
+    width: 80vw !important;
+    top: 30vh !important;
+  }
+  .notification-popup::before {
+    display: none;
+  }
+  main {
+    padding: 0 0.5rem;
+    grid-template-columns: 1fr !important;
+  }
+  main .left {
+    position: fixed;
+    z-index: 9;
+    top: 80vh;
+    width: 18vw;
+    max-width: 70px;
+    opacity: 0.6;
+    right: 5vw;
+    padding: 5px;
+    transition: 1s;
+  }
+  main .left .side-bar {
+    background: var(--color-black);
+    padding: 2px;
+  }
+  main .left .side-bar .item:not(.active) {
+    display: none;
+    transition: 1s;
+  }
+  main .left .side-bar .item h3 {
+    display: none !important;
+  }
+  main .left .side-bar .active {
+    border-radius: 7px;
+  }
+  main .left .side-bar .active:hover .item:not(.active) {
+    display: flex;
+    transition: 1s;
+  }
+  header .name {
+    font-size: 70% !important;
+  }
+  .main-content {
+    padding: 1rem 2px !important;
+  }
+  .name h1 {
+    font-size: 8vw;
+  }
+  .header h2 {
+    font-size: 8vw;
+  }
+  .header p {
+    font-size: 6vw;
+  }
+  .follow {
+    font-size: 4vw !important;
+  }
+}
+.chat-area {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  position: relative;
+  top: 5rem;
+}
+.chat-area .chat-display {
+  position: fixed;
+  width: 95%;
+  max-width: 500px;
+  margin: auto;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 72vh;
+  overflow: scroll;
+  padding: var(--card-padding);
+  border-radius: var(--card-border-radius);
+  margin-bottom: 40px;
+}
+.chat-area .chat-display::-webkit-scrollbar {
+  width: 0;
+}
+.chat-area .chat-display .outgoing {
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+  background: var(--color-dark);
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 10px 0 10px 10px;
+  margin-left: auto;
+  margin-bottom: 1rem;
+  text-align: right;
+}
+.chat-area .chat-display .incoming {
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 4px;
+}
+.chat-area .chat-display .incoming .profile-pic {
+  width: 45px;
+  height: 45px;
+}
+.chat-area .chat-display .incoming .profile-pic img {
+  height: 45px;
+  -o-object-position: center;
+     object-position: center;
+}
+.chat-area .chat-display .incoming p {
+  width: 100%;
+  max-width: 300px;
+  background: #000;
+  color: #fff;
+  padding: 0.5rem;
+  margin-right: auto;
+  text-align: left;
+  margin-bottom: 1rem;
+  border-radius: 0 10px 10px 10px;
+}
+.chat-area .typing-area {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  max-width: 500px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.chat-area .typing-area form {
+  width: 100%;
+  margin-top: 20px;
+  width: 100%;
+  background: var(--color-primary);
+  padding: var(--card-padding);
+  border-radius: 5px;
+  border: solid 2px var(--color-dark);
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.chat-area .typing-area form textarea {
+  width: 100%;
+  max-height: 40px;
+  flex: 1;
+  padding: var(--search-padding);
+  font-size: 1rem;
+  resize: none;
+}
+.chat-area .typing-area form button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  background: var(--color-dark);
+  color: var(--color-white);
+  border-radius: 10px;
+}
+.chat-area .typing-area form button:last-child {
+  align-self: flex-end;
+  background: var(--color-dark);
+  font-size: 2rem;
+  color: #fff;
+  padding: 0 !important;
+}
+.chat-area .typing-area form .file {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+}
+.chat-area .typing-area form .file button {
+  width: 40px;
+  height: 40px;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+.chat-area .typing-area form .file input {
+  position: absolute;
+  transform: scale(2);
+  opacity: 0;
+  cursor: pointer;
+}
+.chat-area .typing-area form .file input::-webkit-file-upload-button {
+  cursor: pointer;
+}
+
+.scrolled {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+}
+.scrolled .nav-bar .name {
+  display: none;
+}
+.scrolled header {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 0px;
+}
+.scrolled header .header {
+  display: none;
+}
+.scrolled header .header .bio {
+  display: none;
+}
+.scrolled header .bottom-sect .profile {
+  width: 6vw;
+  height: 6vw;
+  min-height: 50px;
+  min-width: 50px;
+}
+.scrolled header .bottom-sect .profile .file {
+  display: none;
+}/*# sourceMappingURL=profile.css.map */
