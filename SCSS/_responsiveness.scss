@@ -1,0 +1,253 @@
+/*
+ * TABLETS AND MOBILE 600PX
+ * SMALL LAPTOPS AND BIG TABLETS 992PX
+ *
+*/
+
+/********** Small Laptops and big tablet **********/
+@media screen and (max-width: 992px) {
+    .chat-container
+    {
+        grid-template-columns:1fr;
+
+        .chat-users
+        {
+            display:none;
+        }
+    }
+    
+    .create-post
+    {
+        display:none;
+    }
+
+    main{
+        .container{
+            width:95%;
+            grid-template-columns:30vw auto !important;   
+            gap:1.5rem !important;
+
+            .right
+            {
+                display:none;
+            }
+
+            .menu-item
+            {
+                display:block;
+                h3{
+                    display:inline-block;
+                }
+            }
+        }
+    }
+
+
+    .search-bar{
+        input{
+            width:70%;
+        }
+    }
+}
+
+/********* small Tablets and mobile ******/
+@media screen and (max-width: 600px){
+    
+    .container
+    {
+        width:100%;
+    }
+    .create-post
+    {
+        display:none;
+    }
+    
+
+    .theme-page
+    {
+        left:-100px !important;
+    }
+
+    nav{
+        width:100%;
+
+        .container{
+            width:90%;
+
+            
+
+            .search-bar{
+                justify-self: flex-end;
+                text-align:right;
+                padding:0;
+                width:40px;
+                height:40px;
+                @include display(flex,column,center,center);
+                transition:all 1s;
+
+                &:hover{
+                    width:100%;
+
+                    input{
+                        display:inline-block;
+                        width:80%;
+                        outline:none;
+                    }
+
+                    .search-icon{
+                        display:none;
+                    }
+                }
+
+                input{
+                    display:none;
+                }
+
+                .search-icon{
+                    font-size:1rem;
+                    
+                }
+            }
+
+            .create{
+                gap:0.5rem;
+                .btn{
+                    padding:6px;
+                }
+            }
+        }
+    }
+
+    main{
+        width:100%;
+
+        .container{
+            width:95%;
+            margin:auto;
+            grid-template-columns: 100% !important;   
+            
+            .menu-item
+            {
+                h3{
+                    display:none !important;
+                }
+            }
+        }
+    }
+
+    .right{
+        display:none;
+        
+    }
+
+    .left{
+        position:fixed;
+        // overflow:hidden;
+        z-index:9;
+        top:75vh;
+        width:14vw;
+        max-width:60px;
+        opacity:.6;
+        right:5vw;
+        transition: all 1s;
+
+        .notification-popup
+        {
+            left:-80vw;
+            width:80vw;
+
+            &::before
+            {
+                display:none;
+            }
+        }
+
+        .side-bar
+        {
+            min-width:50px !important;
+            background:var(--color-black);
+            .menu-item{
+               &:not(.active)
+                {
+                    // height:50px;
+                    display:none;
+                    transition:1s;
+                }
+
+              
+            }
+            
+
+            .active{
+                border-radius:7px;
+
+                
+            }
+
+            .active:hover .menu-item:not(.active){
+                display:flex;
+                transition:1s;
+            }
+
+            // .menu-item:first-child
+            // {
+            //     display:none;
+            // }
+            
+        }
+
+        .profile{
+            justify-content:center;
+            background:var(--color-black);
+            display:none;
+            
+            .handle
+            {
+                display:none;
+            }
+
+            
+        }
+    }
+
+    .middle{
+        .feeds{
+            .feed{
+                .liked-by{
+                    font-size:.7rem;
+                    
+                    .likers{
+                        width:25px;
+                        height:25px;
+                    }
+                }
+                .caption{
+                    font-size:1.1rem;
+                }
+            }
+        }
+        
+        
+    }
+
+    .signup-card{
+        .second-section{
+        grid-template-columns: 1fr !important;
+        width:100%;
+        }
+    }
+
+    ::-webkit-scrollbar
+    {
+        width:0 !important;
+        height:0;
+    }
+} 
+
+/**************** Extremely Small Phone **************/
+// @media screen and (max-width: 300px){
+//     .left .side-bar
+//     {
+        
+//     }
+// }

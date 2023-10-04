@@ -1,0 +1,46 @@
+nav {
+	width: 100%;
+	background: var(--color-white);
+	padding: 0.7rem 0;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+
+	.btn {
+		background-color: transparent;
+		border: 1px solid #fff;
+		color: var(--color-dark);
+
+		&:hover {
+			background-color: var(--color-dark);
+		}
+	}
+
+	.active {
+		background-color: var(--color-dark);
+	}
+	.container {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		column-gap: 20px;
+		justify-content: center;
+
+		.create {
+			align-self: flex-end;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			gap: 2rem;
+
+			.profile-pic {
+				min-width: 3.1rem;
+			}
+		}
+	}
+	.logo {
+		img {
+			max-width: 100px;
+		}
+	}
+}

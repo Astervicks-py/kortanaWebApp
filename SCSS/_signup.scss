@@ -1,0 +1,127 @@
+.signup-card{
+    padding:var(--card-padding);
+    // background:rgb(4,9,30);
+    box-shadow: inset 0 0 60px 20px #000;
+    background:none;
+    border-radius:var(--card-border-radius);
+    color:#fff;
+    width:95%;
+    max-width: 500px;
+    
+    h1{
+        color:#fff;
+        text-transform: uppercase;
+    }
+    
+    form{
+        @include display(flex,column,center,center);
+        gap:10px;
+
+        .file{
+            width:70px;
+            position:relative;
+            margin:auto;
+        
+            img{
+                width:70px;
+                height:70px;
+                object-fit: cover;
+                object-position:center;
+                border-radius:50%;
+                border:2px solid #eaeaea;  
+            }
+            .round{
+                position:absolute;
+                bottom:0;
+                right:0;
+                background:#0084ff;
+                width:32px;
+                height:32px;
+                line-height:33px;
+                overflow:hidden;
+                text-align:center;
+                border-radius:50%;
+                
+                input{
+                    position:absolute;
+                    cursor:pointer;
+                    transform:scale(2);
+                    opacity:0;
+        
+                    &::-webkit-file-upload-button{
+                        cursor:pointer;
+                    }
+                }
+            }
+        
+        
+        }
+        .top-section{
+            width:100%;
+            @include display(flex,row,flex-start,center);
+            gap:10px;
+        }
+
+        input{
+            width:100%;
+            margin-top:5px;
+            height:40px;
+            border-radius:5px;
+            padding:5px 10px;
+            outline:none;
+        }
+
+        .second-section{
+            width:100%;
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            column-gap:20px;
+            .gender-section{
+                display:grid;
+                grid-template-columns: 1fr 1fr;
+                // gap:30px;
+                width:80%;
+                margin:auto;
+
+                section{
+                    @extend .top-section;
+                    gap:10px;
+                }
+                input{
+                    height:20px;
+                    margin:0;   
+                }
+                
+            }
+        }
+        
+    }
+
+    a
+    {
+        color:#0f0;
+    }
+}
+
+.submit{
+    width:100%;
+    @include display(flex,row,center,center);
+    .btn{
+        width:80%;
+        // border:solid 2px var(--color-border);
+        margin:auto;
+        // background:var(--color-dark);
+        box-shadow: inset 0 0 60px 5px #000;
+        background:none;
+        color:var(--white);
+    }
+}
+
+.error{
+    width:100%;
+    padding:5px;
+    background-color: rgb(203, 126, 126);
+    text-align:center;
+    color:rgb(216, 5, 5);
+    display:none;
+}

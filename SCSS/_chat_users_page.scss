@@ -1,0 +1,99 @@
+.scroll-container
+{
+    // min-width:700px;
+    // width:100%;
+    // display:grid;
+    // grid-template-columns:1fr;
+    // gap:2rem;
+
+    #desiree-section{
+        display:none;
+    }
+
+    #groups-section{
+        display:none;
+    }
+}
+
+
+.scroll-section-selector{
+    padding:5px;
+    border-bottom:solid 3px var(--color-border);
+
+    &:first-of-type,&:nth-of-type(2)
+    {
+        border-right:solid 3px var(--color-border);
+    }
+
+    
+}
+
+.section-selector-cont,.scroll-section-selector-cont{
+    color:var(--color-text);
+    font-size:1.3rem;
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    text-align:center;
+
+
+    .section-selector{
+        padding:5px;
+        border-bottom:solid 3px var(--color-border);
+
+        &:first-of-type,&:nth-of-type(2)
+        {
+            border-right:solid 3px var(--color-border);
+        }
+
+        
+    }
+
+    .active-section{
+        border-bottom:solid 3px red !important;
+    }
+}
+.avaliable-users{ 
+    width:100%;
+    padding:5px;
+    border-radius: var(--card-border-radius);
+    background-color: var(--color-black);
+    border:solid 2px var(--color-border);
+    @include display(flex,column,flex-start,flex-start);
+    gap:10px;
+    max-height:80vh;
+    overflow:scroll;
+
+    &::-webkit-scrollbar{
+        width:0;
+    }
+
+    .user_link{
+        width:100%;
+        background-color: var(--color-dark);
+        border-radius: var(--card-border-radius);
+        border:solid 2px var(--color-border);
+        
+
+        .user{
+            width:100%;
+            @include display(flex,row,flex-start,flex-start);
+            gap:10px;
+            padding:5px;
+            border-radius: var(--card-border-radius);
+            background-color: var(--color-dark);
+            font-size: 1.6rem;
+            border:solid 2px var(--color-border);
+
+            h5{
+                color:var(--white);
+            }
+
+            p{
+                font-size:.75rem;
+                font-family: cursive;
+            }
+        }
+    }
+    
+
+}

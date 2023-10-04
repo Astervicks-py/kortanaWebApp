@@ -1,0 +1,17 @@
+/*
+ * TABLETS AND MOBILE 600PX
+ * SMALL LAPTOPS AND BIG TABLETS 992PX
+ *
+*/
+
+/********** Small Laptops and big tablet **********/
+@media screen and (max-width: 992px) {
+    .chat-main{
+        grid-template-columns: 100%;
+
+        .chat-display{
+            display:none;
+        }
+        
+    }
+}

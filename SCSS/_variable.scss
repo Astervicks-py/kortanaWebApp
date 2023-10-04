@@ -1,0 +1,92 @@
+@mixin display($display,$direction,$justify,$alignment){
+    display:$display;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $alignment;
+}
+
+*{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+:root{
+    --white:#fff;
+    --color-white:hsl(252,75%,64%);//hsl(252, 30%, 100%);
+    --color-light:hsl(252,30%,95%);
+    --color-gray:hsl(252,15%,65%);
+    --color-border:hsl(252,75%,64%);
+    --color-primary:hsl(252,75%,64%);
+    --color-secondary:hsl(252,100%,90%);
+    --color-success:hsl(120,95%,65%);
+    --color-danger:hsl(0,95%,65%);
+    --color-black:hsl(252,30%,10%);
+    --color-dark:hsl(252, 30%, 17%);
+    --color-text:#fff;
+
+    --border-radius:2rem;
+    --card-border-radius:1rem;
+    --btn-padding:0.6rem 2rem;
+    --search-padding:0.6rem 1rem;
+    --card-padding:1rem;
+
+    --sticky-top-left:5rem;
+    --sticky-top-right:-18rem;
+
+}
+
+.container{
+    width:90%;
+    margin: 0 auto;
+}
+
+.profile-pic{
+    max-width:2.7rem;
+    aspect-ratio: 1/1;
+    overflow:hidden;
+    border-radius: 50%;
+    border:solid 2px var(--color-border);
+    
+    img{
+        object-fit:cover;
+        object-position:center;
+        // width:100%;
+        width:50px;
+        height:50px
+    }
+}
+
+.btn{
+    display:inline-block;
+    padding:var(--btn-padding);
+    font-weight:500;
+    border-radius:var(--border-radius);
+    cursor: pointer;
+    transition:all 0.3s ease;
+    font-size:0.9rem;
+
+    &:hover{
+        opacity:0.8
+    }
+}
+
+.btn-primary{
+    background:var(--color-dark);
+    color:#fff;
+}
+
+.btn-secondary{
+    background:red;
+    color:#fff;
+}
+
+.text-bold{
+    font-weight:500;
+}
+
+.text-muted{
+    color:var(--white);
+}
+
+.display{
+    display: block;
+}
